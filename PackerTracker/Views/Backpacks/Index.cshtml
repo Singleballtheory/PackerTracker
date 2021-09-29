@@ -1,6 +1,6 @@
 @using PackerTracker.Models;
 
-<h1>To Do List</h1>
+<h1>Stuff in your Backpack</h1>
 @if (Model.Count == 0)
 {
   <p>There are no items in the list.</p>
@@ -8,13 +8,14 @@
 <ul>
   @foreach (Backpack backpack in Model)
   {
-    <li><a href="/backpack/@backpack.Id">@backpack.Thing</a></li>
+    <li><a href="/backpacks/@backpack.Id">@backpack.Thing</a></li>
+    <!-- /@backpack.Id -->
   }
 </ul>
 
-<a href="/items/new">Add a new item.</a>
+<a href="/backpacks/new">Add a new item.</a>
 
-<form action="/items/delete" method="get">
+<form action="backpacks/delete" method="get">
   <button type="submit" name="button">Clear All Items</button>
 </form>
 

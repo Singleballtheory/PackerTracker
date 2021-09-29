@@ -4,6 +4,10 @@ namespace PackerTracker.Controllers
 {
   public class HomeController : Controller
   {
-    public string Hello() { return "Hello friend!"; }
-  }  
+    [HttpGet("/")]
+    public ActionResult Index()
+    {
+      return View();
+    }
+  }
 }

@@ -27,7 +27,7 @@ namespace PackerTracker.Models
       Thing = thing;
       //Price = price;
       _instances.Add(this);
-      // Id = _instances.Count;
+      Id = _instances.Count;
     }
 
     public static List<Backpack> GetAll()
@@ -40,22 +40,22 @@ namespace PackerTracker.Models
       _instances.Clear();
     }
 
-    // public static Item Find(int searchId)
-    // {
-                  //good fail because the function doesn't do what it's supposed to do
-                  // Item wrongItem = new Item("stuff");
-                  // return wrongItem;
-    //   return _instances[searchId-1];
-    // }
+    public static Backpack Find(int searchId)
+    {
+      //good fail because the function doesn't do what it's supposed to do
+      // Item wrongItem = new Item("stuff");
+      // return wrongItem;
+      return _instances[searchId-1];
+    }
 
-    // public static void RemoveById(int id)
-    // {
+    public static void RemoveById(int id)
+     {
             /*
             index: 0 id: 
             */
 
       //count: 3
-     // _instances.RemoveAt(id - 1);
+       _instances.RemoveAt(id - 1);
               //count: 2
 
               //remove id 2
@@ -74,11 +74,11 @@ namespace PackerTracker.Models
               //index: 1 set to id:2
               //index: 2 set to id:3
 
-      // for (int index = 0; index < _instances.Count; index++)
-      // {
-      //   _instances[index].Id = index + 1;
-      // }
-    // }
+       for (int index = 0; index < _instances.Count; index++)
+      {
+        _instances[index].Id = index + 1;
+      }
+    }
 
   }
 }

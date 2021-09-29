@@ -1,0 +1,11 @@
+<h1>Backpack Item Details: </h1>
+
+<h2>@Model.Thing</h2>
+<h3>Id: @Model.Id</h3>
+<!-- Need an id to submit -->
+<form action='/backpacks/delete/@Model.Id' method="post">
+  <button type="submit" name="button">Delete Item</button>
+</form>
+
+<a href='/backpacks/new'>Add another item</a>
+<a href='/backpacks'>View all items</a>
